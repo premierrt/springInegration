@@ -15,6 +15,6 @@ package kod;
 	    @Override
 	    public String getHelloMessage(String name)
 	    {
-	        return( "Hello, " + name );
+	        return( "Hello, " + name + "dodane w service" );
 	    }
 	}

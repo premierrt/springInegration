@@ -13,7 +13,10 @@ https://www.javacodegeeks.com/2012/08/spring-integration-with-gateways.html
 https://github.com/spring-projects/spring-integration-samples/blob/master/intermediate/async-gateway/src/main/resources/META-INF/spring/integration/math-service-config.xml
 
 
--service activator
+-service activator +labki
 https://www.intertech.com/Blog/spring-integration-tutorial-part-7-service-activators/
+
+--web service
+https://www.javacodegeeks.com/2015/09/spring-integration-and-web-services.html
 
 ---test pull request

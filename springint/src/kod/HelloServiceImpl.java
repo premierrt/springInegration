@@ -11,4 +11,10 @@ package kod;
 	    {
 	        System.out.println( "Hello, " + name );
 	    }
+	    
+	    @Override
+	    public String getHelloMessage(String name)
+	    {
+	        return( "Hello, " + name );
+	    }
 	}

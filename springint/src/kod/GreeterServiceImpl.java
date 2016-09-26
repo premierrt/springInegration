@@ -10,10 +10,20 @@ public class GreeterServiceImpl implements GreeterService
 {
     @Autowired
     private MessageChannel helloWorldChannel;
+    
+    @Autowired
+    private HelloService helloWorldGateway;
 
     @Override
     public void greet(String name)
     {
         helloWorldChannel.send( MessageBuilder.withPayload( name ).build() );
+    }
+    
+    
+    @Override
+    public void greet2(String name)
+    {
+        System.out.println( helloWorldGateway.getHelloMessage( name ) );
     }
 }

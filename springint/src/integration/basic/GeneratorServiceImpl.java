@@ -1,4 +1,4 @@
-package kod;
+package integration.basic;
 
 import java.util.Random;
 

@@ -7,7 +7,7 @@
                                  http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd">
 
 <!-- Component scan to find all Spring components -->
-    <context:component-scan base-package="kod" />
+    <context:component-scan base-package="integration.basic" />
 
     <!-- A Spring Integration channel -->
     <channel id="helloWorldChannel" />
@@ -25,7 +25,7 @@
     <service-activator input-channel="helloWorldWithReplyChannel" ref="helloServiceImpl" method="getHelloMessage" />
 
     <!-- Define a gateway that we can use to capture a return value -->
-    <gateway id="helloWorldGateway" service-interface="kod.HelloService" default-request-channel="helloWorldWithReplyChannel" />	
+    <gateway id="helloWorldGateway" service-interface="integration.basic.HelloService" default-request-channel="helloWorldWithReplyChannel" />	
 
  <!-- przyklad 3 -->   
  
@@ -37,7 +37,7 @@
     <service-activator input-channel="randomChannel" ref="generatorServiceImpl" method="generuj" />
 
     <!-- Define a gateway that we can use to capture a return value -->
-    <gateway id="randomGateway" service-interface="kod.GeneratorService" default-request-channel="randomChannel" />	
+    <gateway id="randomGateway" service-interface="integration.basic.GeneratorService" default-request-channel="randomChannel" />	
 
 
 

@@ -1,4 +1,4 @@
-package kod;
+package integration.basic;
 
 public interface RadomInputService {
 

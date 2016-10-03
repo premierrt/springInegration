@@ -2,9 +2,9 @@ package main;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import kod.GreeterService;
-import kod.RadomInputService;
-import kod.RandomInputServiceImpl;
+import integration.basic.GreeterService;
+import integration.basic.RadomInputService;
+import integration.basic.RandomInputServiceImpl;
 
 /**
  * Main entry-point into the test application

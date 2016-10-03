@@ -19,5 +19,6 @@
 	<classpathentry kind="lib" path="C:/devel/libs/spring-integration-core-3.0.8.RELEASE.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/devel/libs/com.springsource.org.aopalliance-1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/instalki/spring-ws-2.4.0.RELEASE/libs/spring-ws-core-2.4.0.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

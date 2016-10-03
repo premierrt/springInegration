@@ -2,9 +2,15 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xmlns:context="http://www.springframework.org/schema/context"
              xmlns="http://www.springframework.org/schema/integration"
+             xmlns:oxm="http://www.springframework.org/schema/oxm"
+             xmlns:util="http://www.springframework.org/schema/util"
+               
              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                                  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-                                 http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd">
+                                 http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+                                 http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm.xsd      
+								 http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"                   
+  >
 
 <!-- Component scan to find all Spring components -->
     <context:component-scan base-package="integration.basic, currency.springws" />
@@ -42,5 +48,25 @@
 
 <!-- spirng ws client  -->
 
+ <!-- Define the SOAP version used by the WSDL -->
+    <beans:bean id="soapMessageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory">
+        <beans:property name="soapVersion">
+            <util:constant static-field="org.springframework.ws.soap.SoapVersion.SOAP_12"/>
+        </beans:property>
+    </beans:bean>
+
+
+ <!-- The location of the generated Java files -->
+    <oxm:jaxb2-marshaller id="marshaller" contextPath="currency.springws.client.net.webservicex"/>
+ 
+ 
+   <!-- Configure Spring Web Services -->
+    <beans:bean id="webServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate">
+        <beans:constructor-arg ref="soapMessageFactory"/>
+        <beans:property name="marshaller" ref="marshaller"/>
+        <beans:property name="unmarshaller" ref="marshaller"/>
+        <beans:property name="defaultUri" value="http://www.webservicex.net/CurrencyConvertor.asmx?WSDL"/>
+    </beans:bean>
+ 
 
 </beans:beans>

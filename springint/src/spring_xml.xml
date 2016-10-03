@@ -7,7 +7,7 @@
                                  http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd">
 
 <!-- Component scan to find all Spring components -->
-    <context:component-scan base-package="integration.basic" />
+    <context:component-scan base-package="integration.basic, currency.springws" />
 
     <!-- A Spring Integration channel -->
     <channel id="helloWorldChannel" />
@@ -39,6 +39,8 @@
     <!-- Define a gateway that we can use to capture a return value -->
     <gateway id="randomGateway" service-interface="integration.basic.GeneratorService" default-request-channel="randomChannel" />	
 
+
+<!-- spirng ws client  -->
 
 
 </beans:beans>
